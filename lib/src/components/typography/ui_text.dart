@@ -51,11 +51,11 @@ class UIText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final baseSize = UITheme.of(context).textTheme.baseSize;
+    final baseSize = UITheme.of(context).typography.baseFontSize;
     return UITextBasics(
       data,
       color: color,
-      size: baseSize - fontSize.size,
+      fontSize: baseSize - fontSize.size,
       fontWeight: strong ? UIFontWeight.medium : UIFontWeight.normal,
       style: style,
       copyable: copyable,

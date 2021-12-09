@@ -47,10 +47,10 @@ class UITitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final baseSize = UITheme.of(context).textTheme.baseSize;
+    final baseSize = UITheme.of(context).typography.baseFontSize;
     return UITextBasics(
       data,
-      size: baseSize + heading.size,
+      fontSize: baseSize + heading.size,
       fontWeight: strong ? UIFontWeight.bold : UIFontWeight.medium,
       style: style,
     );

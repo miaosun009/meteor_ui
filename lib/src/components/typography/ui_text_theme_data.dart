@@ -2,36 +2,36 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 @immutable
-class UITextTheme with Diagnosticable {
-  final double baseSize;
-  final Color baseColor;
+class UITypography with Diagnosticable {
+  final double baseFontSize;
+  final Color baseFontColor;
 
-  const UITextTheme({
-    required this.baseSize,
-    required this.baseColor,
+  const UITypography({
+    required this.baseFontSize,
+    required this.baseFontColor,
   });
 
-  UITextTheme copyWith({
-    Color? baseColor,
-    double? baseSize,
+  UITypography copyWith({
+    Color? baseFontColor,
+    double? baseFontSize,
   }) {
-    return UITextTheme(
-      baseColor: baseColor ?? this.baseColor,
-      baseSize: baseSize ?? this.baseSize,
+    return UITypography(
+      baseFontColor: baseFontColor ?? this.baseFontColor,
+      baseFontSize: baseFontSize ?? this.baseFontSize,
     );
   }
 
   @override
   bool operator ==(Object other) {
     if (other.runtimeType != runtimeType) return false;
-    return other is UITextTheme && other.baseColor == baseColor && other.baseSize == baseSize;
+    return other is UITypography && other.baseFontColor == baseFontColor && other.baseFontSize == baseFontSize;
   }
 
   @override
   int get hashCode {
     final List<Object?> values = <Object?>[
-      baseColor,
-      baseSize,
+      baseFontColor,
+      baseFontSize,
     ];
     return hashList(values);
   }

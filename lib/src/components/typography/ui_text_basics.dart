@@ -10,7 +10,7 @@ class UITextBasics extends StatelessWidget {
   final String data;
 
   /// 字体大小
-  final double? size;
+  final double? fontSize;
 
   /// 文本加粗方式
   final UIFontWeight? fontWeight;
@@ -50,7 +50,7 @@ class UITextBasics extends StatelessWidget {
     this.delete = false,
     this.underline = false,
     this.copyable,
-    this.size,
+    this.fontSize,
     this.color,
     this.onCopyable,
     this.style,
@@ -62,7 +62,7 @@ class UITextBasics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle style = this.style ?? TextStyle(color: color, fontSize: size, fontWeight: fontWeight);
+    TextStyle style = this.style ?? TextStyle(color: color, fontSize: fontSize, fontWeight: fontWeight);
     if (underline) {
       style = style.copyWith(decorationStyle: TextDecorationStyle.solid, decoration: TextDecoration.underline);
     }
@@ -82,7 +82,7 @@ class UITextBasics extends StatelessWidget {
       child: AutoSizeText(
         data,
         maxLines: maxLine,
-        minFontSize: minFontSize ?? UITheme.of(context).textTheme.baseSize,
+        minFontSize: minFontSize ?? UITheme.of(context).typography.baseFontSize,
         style: style,
         textAlign: textAlign,
         textDirection: textDirection,

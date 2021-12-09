@@ -6,27 +6,27 @@ import 'package:meteor_ui/src/components/typography/ui_text_theme_data.dart';
 
 @immutable
 class UIThemeData with Diagnosticable {
-  final UITextTheme textTheme;
+  final UITypography typography;
 
-  factory UIThemeData({UITextTheme? textTheme}) {
-    textTheme ??= const UITextTheme(baseSize: 14, baseColor: Colors.red);
-    return UIThemeData.raw(textTheme: textTheme);
+  factory UIThemeData({UITypography? typography}) {
+    typography ??= const UITypography(baseFontSize: 14, baseFontColor: Colors.red);
+    return UIThemeData.raw(typography: typography);
   }
 
   const UIThemeData.raw({
-    required this.textTheme,
+    required this.typography,
   });
 
   @override
   bool operator ==(Object other) {
     if (other.runtimeType != runtimeType) return false;
-    return other is UIThemeData && other.textTheme == textTheme;
+    return other is UIThemeData && other.typography == typography;
   }
 
   @override
   int get hashCode {
     final List<Object?> values = <Object?>[
-      textTheme,
+      typography,
     ];
     return hashList(values);
   }
@@ -35,6 +35,6 @@ class UIThemeData with Diagnosticable {
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     final UIThemeData defaultData = UIThemeData();
-    properties.add(DiagnosticsProperty<UITextTheme>('textTheme', textTheme, defaultValue: defaultData.textTheme, level: DiagnosticLevel.debug));
+    properties.add(DiagnosticsProperty<UITypography>('textTheme', typography, defaultValue: defaultData.typography, level: DiagnosticLevel.debug));
   }
 }
