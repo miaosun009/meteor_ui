@@ -16,10 +16,10 @@ class UITheme extends StatelessWidget {
   static UIThemeData of(BuildContext context, {bool shadowThemeOnly = false}) {
     final _UIInheritedTheme? inheritedTheme = context.dependOnInheritedWidgetOfExactType<_UIInheritedTheme>();
     if (shadowThemeOnly) {
-      if (inheritedTheme == null) return const UIThemeData();
+      if (inheritedTheme == null) return UIThemeData();
       return inheritedTheme.theme.data;
     }
-    return inheritedTheme?.theme.data ?? const UIThemeData();
+    return inheritedTheme?.theme.data ?? UIThemeData();
   }
 
   @override

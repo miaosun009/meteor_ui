@@ -1,47 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:meteor_ui/meteor_ui.dart';
+import 'package:meteor_ui_example/pages/home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Bootstrap());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Bootstrap extends StatefulWidget {
+  const Bootstrap({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<Bootstrap> createState() => _BootstrapState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _BootstrapState extends State<Bootstrap> {
+  Map<String, WidgetBuilder> routes = {};
+
+  @override
+  void initState() {
+    super.initState();
+    routes = {};
+  }
+
   @override
   Widget build(BuildContext context) {
     return MeteorUI(
-      theme: const UIThemeData(),
+      theme: UIThemeData(),
       child: MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Meteor UI'),
-          ),
-          body: GridView(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-            children: [
-              UIThrottleTap(
-                child: Container(
-                  height: 40,
-                  color: Colors.yellow,
-                  child: UIColumn(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.access_alarm),
-                      Text("基础"),
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
+        home: const HomePage(),
+        routes: routes,
       ),
     );
   }

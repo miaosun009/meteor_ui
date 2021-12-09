@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:meteor_ui/meteor_ui.dart';
 
+/// 节流点击组件
 class UIThrottleTap extends StatefulWidget {
   final Widget child;
   final Function()? onTap;
