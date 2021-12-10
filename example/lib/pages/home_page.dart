@@ -11,6 +11,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final colors = UITheme.of(context).colors;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Meteor UI"),
@@ -26,14 +27,36 @@ class _HomePageState extends State<HomePage> {
                 UIThrottleTap(
                   child: Container(
                     height: 40,
-                    color: Colors.yellow,
+                    color: colors.primary.hover,
+                    child: UIColumn(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.title,
+                          color: colors.text.minor,
+                        ),
+                        SizedBox(height: 5),
+                        UIText(
+                          '排版',
+                          color: colors.text.color,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                UIThrottleTap(
+                  child: Container(
+                    height: 40,
+                    color: colors.primary.color,
                     child: UIColumn(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
-                        Icon(Icons.access_alarm),
+                        Icon(Icons.color_lens),
+                        SizedBox(height: 5),
                         UIText(
-                          '基础',
+                          '颜色',
                         ),
                       ],
                     ),

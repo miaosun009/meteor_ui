@@ -25,7 +25,9 @@ class _BootstrapState extends State<Bootstrap> {
   @override
   Widget build(BuildContext context) {
     return MeteorUI(
-      theme: UIThemeData(),
+      theme: UIThemeData(
+        baseFontSize: 14,
+      ),
       child: MaterialApp(
         home: const HomePage(),
         routes: routes,

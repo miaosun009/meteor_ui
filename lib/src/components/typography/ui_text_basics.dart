@@ -36,10 +36,16 @@ class UITextBasics extends StatelessWidget {
   /// 文本样式
   final TextStyle? style;
 
+  /// 最大行数
   final int? maxLine;
 
+  /// 最小字体尺寸
   final double? minFontSize;
+
+  /// 文本居中方式
   final TextAlign? textAlign;
+
+  /// 文本方向
   final TextDirection? textDirection;
 
   const UITextBasics(
@@ -82,7 +88,7 @@ class UITextBasics extends StatelessWidget {
       child: AutoSizeText(
         data,
         maxLines: maxLine,
-        minFontSize: minFontSize ?? UITheme.of(context).typography.baseFontSize,
+        minFontSize: minFontSize ?? UITheme.of(context).baseFontSize,
         style: style,
         textAlign: textAlign,
         textDirection: textDirection,

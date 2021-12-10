@@ -31,6 +31,18 @@ class UITitle extends StatelessWidget {
   final bool underline;
   final TextStyle? style;
 
+  /// 最大行数
+  final int? maxLine;
+
+  /// 最小字体尺寸
+  final double? minFontSize;
+
+  /// 文本居中方式
+  final TextAlign? textAlign;
+
+  /// 文本方向
+  final TextDirection? textDirection;
+
   const UITitle(
     this.data, {
     Key? key,
@@ -43,16 +55,24 @@ class UITitle extends StatelessWidget {
     this.color,
     this.onCopyable,
     this.style,
+    this.maxLine,
+    this.minFontSize,
+    this.textAlign,
+    this.textDirection,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final baseSize = UITheme.of(context).typography.baseFontSize;
+    final baseSize = UITheme.of(context).baseFontSize;
     return UITextBasics(
       data,
       fontSize: baseSize + heading.size,
       fontWeight: strong ? UIFontWeight.bold : UIFontWeight.medium,
       style: style,
+      maxLine: maxLine,
+      minFontSize: minFontSize,
+      textAlign: textAlign,
+      textDirection: textDirection,
     );
   }
 }

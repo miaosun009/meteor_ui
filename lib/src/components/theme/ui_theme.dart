@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'ui_theme_data.dart';
+import 'ui_theme_data_interface.dart';
 
 class UITheme extends StatelessWidget {
   const UITheme({
@@ -9,17 +10,17 @@ class UITheme extends StatelessWidget {
     required this.child,
   }) : super(key: key);
 
-  final UIThemeData data;
+  final UIThemeDataInterface data;
   final Widget child;
 
   /// 获取主题数据
-  static UIThemeData of(BuildContext context, {bool shadowThemeOnly = false}) {
+  static T of<T extends UIThemeDataInterface>(BuildContext context, {bool shadowThemeOnly = false}) {
     final _UIInheritedTheme? inheritedTheme = context.dependOnInheritedWidgetOfExactType<_UIInheritedTheme>();
     if (shadowThemeOnly) {
-      if (inheritedTheme == null) return UIThemeData();
-      return inheritedTheme.theme.data;
+      if (inheritedTheme == null) return UIThemeData() as T;
+      return inheritedTheme.theme.data as T;
     }
-    return inheritedTheme?.theme.data ?? UIThemeData();
+    return (inheritedTheme?.theme.data ?? UIThemeData()) as T;
   }
 
   @override
@@ -28,7 +29,7 @@ class UITheme extends StatelessWidget {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty<UIThemeData>('data', data, showName: false));
+    properties.add(DiagnosticsProperty<UIThemeDataInterface>('data', data, showName: false));
   }
 }
 

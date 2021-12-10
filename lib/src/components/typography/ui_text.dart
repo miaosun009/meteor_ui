@@ -29,9 +29,21 @@ class UIText extends StatelessWidget {
 
   /// 添加下划线
   final bool underline;
+
+  /// 文本样式
   final TextStyle? style;
+
+  /// 最大行数
   final int? maxLine;
+
+  /// 最小字体尺寸
   final double? minFontSize;
+
+  /// 文本居中方式
+  final TextAlign? textAlign;
+
+  /// 文本方向
+  final TextDirection? textDirection;
 
   const UIText(
     this.data, {
@@ -47,11 +59,13 @@ class UIText extends StatelessWidget {
     this.style,
     this.maxLine,
     this.minFontSize,
+    this.textAlign,
+    this.textDirection,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final baseSize = UITheme.of(context).typography.baseFontSize;
+    final baseSize = UITheme.of(context).baseFontSize;
     return UITextBasics(
       data,
       color: color,
@@ -65,6 +79,8 @@ class UIText extends StatelessWidget {
       underline: underline,
       maxLine: maxLine,
       minFontSize: minFontSize,
+      textAlign: textAlign,
+      textDirection: textDirection,
     );
   }
 }
