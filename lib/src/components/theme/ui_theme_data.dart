@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:meteor_ui/src/components/color_scheme/color_scheme.dart';
-import 'package:meteor_ui/src/components/color_scheme/ui_color_scheme_interface.dart';
+import 'package:meteor_ui/src/components/color/color.dart';
+import 'package:meteor_ui/src/components/color/ui_color_scheme_interface.dart';
 import 'ui_theme_data_interface.dart';
 
 @immutable
@@ -23,7 +23,7 @@ class UIThemeData extends UIThemeDataInterface {
   }) {
     fontFamily ??= "";
     baseFontSize ??= 14;
-    colors ??= UIColorScheme.dark();
+    colors ??= UIColorScheme.light();
     return UIThemeData.raw(
       fontFamily: fontFamily,
       baseFontSize: baseFontSize,

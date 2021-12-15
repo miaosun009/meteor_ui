@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:meteor_ui/src/components/color/ui_color_palette_scheme.dart';
 
 import 'ui_color_scheme_interface.dart';
 
@@ -103,32 +104,104 @@ class UIColorScheme extends UIColorSchemeInterface {
     required this.disabled,
   });
 
-  factory UIColorScheme.dark() {
-    return const UIColorScheme(
-      primary: UIBaseColor(color: Color.fromRGBO(40, 20, 117, 1), hover: Color(0xff0462d6), active: Color(0xff024fb3), disabled: Color(0xff97cdfd)),
-      primaryLight: UIBaseColor(color: Color(0xff281475), hover: Color(0xff0462d6), active: Color(0xff024fb3)),
-      secondary: UIBaseColor(color: Color(0xff281475), hover: Color(0xff0462d6), active: Color(0xff024fb3), disabled: Color(0xff97cdfd)),
-      secondaryLight: UIBaseColor(color: Color(0xff281475), hover: Color(0xff0462d6), active: Color(0xff024fb3)),
-      tertiary: UIBaseColor(color: Color(0xff281475), hover: Color(0xff0462d6), active: Color(0xff024fb3), disabled: Color(0xff97cdfd)),
-      tertiaryLight: UIBaseColor(color: Color(0xff281475), hover: Color(0xff0462d6), active: Color(0xff024fb3)),
-      success: UIBaseColor(color: Color(0xff281475), hover: Color(0xff0462d6), active: Color(0xff024fb3), disabled: Color(0xff97cdfd)),
-      successLight: UIBaseColor(color: Color(0xff281475), hover: Color(0xff0462d6), active: Color(0xff024fb3)),
-      deanger: UIBaseColor(color: Color(0xff281475), hover: Color(0xff0462d6), active: Color(0xff024fb3), disabled: Color(0xff97cdfd)),
-      deangerLight: UIBaseColor(color: Color(0xff281475), hover: Color(0xff0462d6), active: Color(0xff024fb3)),
-      warning: UIBaseColor(color: Color(0xff281475), hover: Color(0xff0462d6), active: Color(0xff024fb3), disabled: Color(0xff97cdfd)),
-      warningLight: UIBaseColor(color: Color(0xff281475), hover: Color(0xff0462d6), active: Color(0xff024fb3)),
-      link: UIBaseColor(color: Color(0xff281475), hover: Color(0xff0462d6), active: Color(0xff024fb3)),
-      shadow: UIColor(color: Color(0xff281475)),
-      border: UIColor(color: Color(0xff281475)),
-      fill: UIBaseColor(color: Color(0xff281475), hover: Color(0xff0462d6), active: Color(0xff024fb3)),
-      background: UIBackgroundColor(color: Color(0xff281475), subLower: Color(0xff0462d6), secondary: Color(0xff024fb3), middle: Color(0xff97cdfd), top: Color(0xff97cdfd)),
-      text: UITextColor(
-        color: Color.fromRGBO(28, 31, 35, 1),
-        slightly: Color.fromRGBO(28, 31, 35, .8),
-        minor: Color.fromRGBO(28, 31, 35, .6),
-        most: Color.fromRGBO(28, 31, 35, .35),
+  factory UIColorScheme.light() {
+    return UIColorScheme(
+      primary: UIBaseColor(
+        color: UIColorPaletteScheme.violet.shade9,
+        hover: UIColorPaletteScheme.blue.shade6,
+        active: UIColorPaletteScheme.blue.shade7,
+        disabled: UIColorPaletteScheme.blue.shade2,
       ),
-      disabled: UIDisabledColor(text: Color(0xff281475), fill: Color(0xff0462d6), background: Color(0xff0462d6), border: Color(0xff0462d6)),
+      primaryLight: UIBaseColor(
+        color: UIColorPaletteScheme.blue.shade0,
+        hover: UIColorPaletteScheme.blue.shade1,
+        active: UIColorPaletteScheme.blue.shade2,
+      ),
+      secondary: UIBaseColor(
+        color: UIColorPaletteScheme.violet.shade9,
+        hover: UIColorPaletteScheme.blue.shade6,
+        active: UIColorPaletteScheme.blue.shade7,
+        disabled: UIColorPaletteScheme.blue.shade2,
+      ),
+      secondaryLight: UIBaseColor(
+        color: UIColorPaletteScheme.blue.shade0,
+        hover: UIColorPaletteScheme.blue.shade1,
+        active: UIColorPaletteScheme.blue.shade2,
+      ),
+      tertiary: UIBaseColor(
+        color: UIColorPaletteScheme.grey.shade5,
+        hover: UIColorPaletteScheme.grey.shade6,
+        active: UIColorPaletteScheme.grey.shade7,
+      ),
+      tertiaryLight: UIBaseColor(
+        color: UIColorPaletteScheme.grey.shade0,
+        hover: UIColorPaletteScheme.grey.shade1,
+        active: UIColorPaletteScheme.grey.shade2,
+      ),
+      success: UIBaseColor(
+        color: UIColorPaletteScheme.green.shade5,
+        hover: UIColorPaletteScheme.green.shade6,
+        active: UIColorPaletteScheme.green.shade7,
+        disabled: UIColorPaletteScheme.green.shade2,
+      ),
+      successLight: UIBaseColor(
+        color: UIColorPaletteScheme.grey.shade0,
+        hover: UIColorPaletteScheme.grey.shade1,
+        active: UIColorPaletteScheme.grey.shade2,
+      ),
+      deanger: UIBaseColor(
+        color: UIColorPaletteScheme.red.shade5,
+        hover: UIColorPaletteScheme.red.shade6,
+        active: UIColorPaletteScheme.red.shade7,
+        disabled: UIColorPaletteScheme.red.shade2,
+      ),
+      deangerLight: UIBaseColor(
+        color: UIColorPaletteScheme.red.shade0,
+        hover: UIColorPaletteScheme.red.shade1,
+        active: UIColorPaletteScheme.red.shade2,
+      ),
+      warning: UIBaseColor(
+        color: UIColorPaletteScheme.orange.shade5,
+        hover: UIColorPaletteScheme.orange.shade6,
+        active: UIColorPaletteScheme.orange.shade7,
+        disabled: UIColorPaletteScheme.orange.shade2,
+      ),
+      warningLight: UIBaseColor(
+        color: UIColorPaletteScheme.orange.shade0,
+        hover: UIColorPaletteScheme.orange.shade1,
+        active: UIColorPaletteScheme.orange.shade2,
+      ),
+      link: UIBaseColor(
+        color: UIColorPaletteScheme.blue.shade5,
+        hover: UIColorPaletteScheme.blue.shade6,
+        active: UIColorPaletteScheme.blue.shade7,
+      ),
+      shadow: UIColor(color: UIColorPaletteScheme.grey.shade0),
+      border: UIColor(color: UIColorPaletteScheme.grey.shade2),
+      fill: UIBaseColor(
+        color: UIColorPaletteScheme.grey.shade0,
+        hover: UIColorPaletteScheme.grey.shade1,
+        active: UIColorPaletteScheme.grey.shade2,
+      ),
+      background: const UIBackgroundColor(
+        color: Colors.white,
+        subLower: Colors.white,
+        secondary: Colors.white,
+        middle: Colors.white,
+        top: Colors.white,
+      ),
+      text: UITextColor(
+        color: UIColorPaletteScheme.grey.shade9,
+        slightly: UIColorPaletteScheme.grey.shade9.withOpacity(.8),
+        minor: UIColorPaletteScheme.grey.shade9.withOpacity(.6),
+        most: UIColorPaletteScheme.grey.shade9.withOpacity(.35),
+      ),
+      disabled: UIDisabledColor(
+        text: UIColorPaletteScheme.grey.shade9.withOpacity(.35),
+        fill: UIColorPaletteScheme.grey.shade1,
+        background: UIColorPaletteScheme.grey.shade1,
+        border: UIColorPaletteScheme.grey.shade9.withOpacity(0.04),
+      ),
     );
   }
 

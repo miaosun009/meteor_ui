@@ -78,22 +78,26 @@ class UITextBasics extends StatelessWidget {
     if (ellipsis) {
       style = style.copyWith(overflow: TextOverflow.ellipsis);
     }
-    return UIGestureDetector(
-      onTap: () async {
-        if (copyable == true) {
+
+    Widget _widget = AutoSizeText(
+      data,
+      maxLines: maxLine,
+      minFontSize: minFontSize ?? UITheme.of(context).baseFontSize,
+      style: style,
+      textAlign: textAlign,
+      textDirection: textDirection,
+    );
+    if (copyable == true) {
+      return UIGestureDetector(
+        onTap: () async {
           await Clipboard.setData(ClipboardData(text: data));
           onCopyable?.call();
-        }
-      },
-      child: AutoSizeText(
-        data,
-        maxLines: maxLine,
-        minFontSize: minFontSize ?? UITheme.of(context).baseFontSize,
-        style: style,
-        textAlign: textAlign,
-        textDirection: textDirection,
-      ),
-    );
+        },
+        child: _widget,
+      );
+    }
+
+    return _widget;
   }
 }
 

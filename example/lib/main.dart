@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meteor_ui/meteor_ui.dart';
+import 'package:meteor_ui_example/pages/color_palette_page.dart';
 import 'package:meteor_ui_example/pages/home_page.dart';
 
 void main() {
@@ -19,7 +20,9 @@ class _BootstrapState extends State<Bootstrap> {
   @override
   void initState() {
     super.initState();
-    routes = {};
+    routes = {
+      "colorPalettePage": (_) => const ColorPalettePage(),
+    };
   }
 
   @override

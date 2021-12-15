@@ -25,9 +25,29 @@ class _HomePageState extends State<HomePage> {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
               children: [
                 UIThrottleTap(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('colorPalettePage');
+                  },
                   child: Container(
                     height: 40,
-                    color: colors.primary.hover,
+                    color: UIColorPaletteScheme.grey.shade1,
+                    child: UIColumn(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(Icons.color_lens),
+                        SizedBox(height: 5),
+                        UIText(
+                          '调色板',
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                UIThrottleTap(
+                  child: Container(
+                    height: 40,
+                    color: UIColorPaletteScheme.grey.shade2,
                     child: UIColumn(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -45,23 +65,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                UIThrottleTap(
-                  child: Container(
-                    height: 40,
-                    color: colors.primary.color,
-                    child: UIColumn(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.color_lens),
-                        SizedBox(height: 5),
-                        UIText(
-                          '颜色',
-                        ),
-                      ],
-                    ),
-                  ),
-                )
               ],
             ),
           ],
